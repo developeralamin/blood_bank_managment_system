@@ -18,5 +18,19 @@ class State extends Model
     }
 
 
-    
+    public static function arrayForSelect()
+    {
+    	$arr = [];
+
+    	$sates  = State::all();
+
+    	foreach($sates as $state){
+    		$arr[$state->id] = $state->state_name ;
+    	}
+    	return $arr;
+    }
+
+
+
+
 }

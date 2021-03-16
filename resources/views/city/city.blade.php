@@ -55,7 +55,7 @@
           <td>{{ $city->city_name }}</td>
           <td>{{ $city->pin_code }}</td>
           <td>{{ $city->district }}</td>
-          <td>{{ $city->state_id }}</td>
+          <td>{{ $city->state->state_name }}</td>
           
           <td class="text-right">
   <form method='post' action="{{ route('city.destroy',['city' => $city->id]) }}">
@@ -63,7 +63,7 @@
         <a href="{{ route('city.show',['city' =>$city->id]) }}"class="btn btn-info">
           <i class="fa fa-eye"></i>
          </a>   
-        <a href=""class="btn btn-info">
+        <a href="{{ route('city.edit',['city' =>$city->id]) }}"class="btn btn-info">
           <i class="fa fa-edit"></i>
          </a>  
 

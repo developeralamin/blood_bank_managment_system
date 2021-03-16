@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\City;
+use App\Models\State;
 use Illuminate\Support\Facades\Session;
-
+use App\Http\Requests\CityRequest;
 
 
 class CitiesController extends Controller
@@ -28,7 +29,9 @@ class CitiesController extends Controller
      */
     public function create()
     {
-        return view('city.create');
+        $this->data['states']            = State::arrayForSelect();
+           $this->data['mode']           = 'Create';
+        return view('city.create',$this->data);
     }
 
     /**
@@ -37,9 +40,14 @@ class CitiesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CityRequest $request)
     {
-        //
+       $formdata   = $request->all();
+
+       if(City::create($formdata)) {
+         Session::flash('message','City Added Successfully');
+       }
+       return redirect()->to('city');
     }
 
     /**
@@ -62,7 +70,10 @@ class CitiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->data['states']         = State::arrayForSelect();
+        $this->data['city']           = City::findOrFail($id);
+        $this->data['mode']           = 'Edit';
+        return view('city.create',$this->data);
     }
 
     /**
@@ -72,9 +83,24 @@ class CitiesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CityRequest $request, $id)
     {
-        //
+        $data                      = $request->all();
+        
+        $city                      = City::find($id);
+        $city->city_name           = $data['city_name'];
+        $city->pin_code            = $data['pin_code'];
+        $city->district            = $data['district'];
+        $city->state_id            = $data['state_id'];
+       
+
+        if( $city->save() ) {
+            Session::flash('message', 'City Updated Successfully');
+        }
+        
+        return redirect()->to('city');
+
+
     }
 
     /**
