@@ -48,7 +48,7 @@
 
 
   <div class="form-group">
-    <label for="state_name"> Name<span class="text-danger">*</span></label>
+    <label for="state_name">State Name<span class="text-danger">*</span></label>
      {{ Form::text('state_name', NULL, [ 'class'=>'form-control', 'id' => 'state_name', 'placeholder' => ' State Name' ]) }}
   </div>
 

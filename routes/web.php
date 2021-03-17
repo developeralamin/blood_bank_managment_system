@@ -17,9 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\CitiesController;
-Route::resource('city', CitiesController::class);
-
 
 use App\Http\Controllers\StatesController;
 Route::resource('state', StatesController::class,['except' => ['show','edit','update'] ]);
+
+use App\Http\Controllers\CitiesController;
+Route::resource('city', CitiesController::class);
+
+use App\Http\Controllers\CampsController;
+Route::resource('camp', CampsController::class);

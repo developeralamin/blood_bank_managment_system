@@ -22,7 +22,7 @@
     </div>
   <div class="card-body">
      <div class="table-responsive">
-   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+   <table class="table table-borderless table-striped"  id="dataTable">
               <thead>
                    <tr>                                              
                     <th>ID</th>      
@@ -52,9 +52,9 @@
   <form method='post' action="{{ route('state.destroy',['state' => $state->id]) }}">
             @csrf
           
-        {{-- <a href=""class="btn btn-info">
+       {{--  <a href="{{ route('state.edit',['state' => $state->id]) }}"class="btn btn-info">
           <i class="fa fa-edit"></i>
-         </a>  --}} 
+         </a>   --}}
 
         @method('DELETE')               
        <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger"> <i class="fa fa-trash"></i></button> 

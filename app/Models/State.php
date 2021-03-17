@@ -18,6 +18,12 @@ class State extends Model
     }
 
 
+    public function camp()
+    {
+        return $this->hasMany(Camp::class);
+    }
+
+
     public static function arrayForSelect()
     {
     	$arr = [];

@@ -20,9 +20,10 @@
    <div class="card-header py-3">
        <h6 class="m-0 font-weight-bold text-primary"><strong>{{  $city->city_name  }} </strong> Information</h6>
     </div>
-  <div class="card-body">
+<div class="card-body row justify-content-md-center">
+  <div class="col-md-6">
      <div class="table-responsive">
-   <table class="table table-borderless  table-hover mt-4">
+   <table class="table table-borderless  table-striped mt-4">
               <tr>
                 <th class="text-right">City Name : </th>
                 <td>{{ $city->city_name }}</td>
@@ -46,6 +47,7 @@
    </table>
    </div>
   </div>
+ </div>
  </div>
 
 

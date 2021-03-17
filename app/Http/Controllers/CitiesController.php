@@ -30,7 +30,7 @@ class CitiesController extends Controller
     public function create()
     {
         $this->data['states']            = State::arrayForSelect();
-           $this->data['mode']           = 'Create';
+        $this->data['mode']              = 'Create';
         return view('city.create',$this->data);
     }
 

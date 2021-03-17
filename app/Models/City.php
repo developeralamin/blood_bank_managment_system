@@ -25,5 +25,23 @@ public static function arrayForSelect()
     	return $this->belongsTo(State::class);
     }
 
+  public function camp()
+    {
+        return $this->hasMany(Camp::class);
+    }
+
+
+ public static function arrayForSelectCity()
+    {
+        $arr = [];
+
+        $cities  = City::all();
+
+        foreach($cities as $city){
+            $arr[$city->id] = $city->city_name ;
+        }
+        return $arr;
+    }
+
 
 }
