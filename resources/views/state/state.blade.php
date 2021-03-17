@@ -10,7 +10,7 @@
          </h2>
   	 </div>
   	 <div class="col-md-6 text-right">
-  	 	<a href="{{ route('state.create') }}" class="btn btn-info"> <i class="fa fa-plus"></i> New State</a>
+  	 	<a href="{{ route('state.create') }}" class="btn btn-danger"> <i class="fa fa-plus"></i> New State</a>
   	 </div>
   	 	
   </div>

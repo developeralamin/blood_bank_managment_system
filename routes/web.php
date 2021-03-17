@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\DashboardController;
+Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
 
 use App\Http\Controllers\StatesController;
@@ -26,3 +26,6 @@ Route::resource('city', CitiesController::class);
 
 use App\Http\Controllers\CampsController;
 Route::resource('camp', CampsController::class);
+
+use App\Http\Controllers\BloodGroupsController;
+Route::resource('blood', BloodGroupsController::class,['except' => ['destroy'] ]);

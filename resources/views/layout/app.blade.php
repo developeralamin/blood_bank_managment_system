@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     {{-- <i class="fas fa-laugh-wink"></i> --}}
                     <i class="fa fa-medkit" aria-hidden="true" style="color:red;"></i>
@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href=" {{ route('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -52,25 +52,20 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            
-
-           
-
 <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+ <li class="nav-item">
+         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
                     aria-expanded="true" aria-controls="collapseThree">
                   <i class="fa fa-fire" aria-hidden="true"></i>
                     <span>All State</span>
-                </a>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="{{ url('state') }}">Add State</a>
+         </a>
+  <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+     <a class="collapse-item " href="{{ url('state') }}">Add State</a>
                        
-                    </div>
-                </div>
-            </li>
+    </div>
+     </div>
+ </li>
             
       <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -103,7 +98,7 @@
             </li>
 
  <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsefive"
                     aria-expanded="true" aria-controls="collapsefive">
                     {{-- <i class="fas fa-fw fa-cog"></i> --}}
@@ -112,7 +107,7 @@
                 </a>
                 <div id="collapsefive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Add Blood</a>
+                        <a class="collapse-item" href="{{ url('blood') }}">Add Blood</a>
                        
                     </div>
                 </div>
@@ -308,7 +303,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright ©2021 | Application Design and Develop by Alamin Islam</span>
                     </div>
                 </div>
             </footer>

@@ -12,6 +12,12 @@ use App\Http\Requests\CampRequest;
 
 class CampsController extends Controller
 {
+    //  public function __construct()
+    // {
+    //     parent::__construct();
+    //     $this->data['main_menu']    = 'all_camp';
+    //     $this->data['sub_menu']     = 'sub_camp';
+    // }
     /**
      * Display a listing of the resource.
      *
@@ -31,6 +37,7 @@ class CampsController extends Controller
      */
     public function create()
     { 
+         $this->data['mode']            = 'Create';
         $this->data['state']            = State::arrayForSelect();
         $this->data['city']             = City::arrayForSelectCity();
         return view('camp.create',$this->data);
@@ -46,6 +53,7 @@ class CampsController extends Controller
     {
         $formdata         = $request->all();
         if(Camp::create($formdata) ){
+
             Session::flash('message','Camp Add Successfully');
         }
 
@@ -73,6 +81,7 @@ class CampsController extends Controller
      */
     public function edit($id)
     {
+         $this->data['mode']            = 'Edit';
         $this->data['state']            = State::arrayForSelect();
         $this->data['city']             = City::arrayForSelectCity();
         $this->data['camp']             = Camp::findOrFail($id);

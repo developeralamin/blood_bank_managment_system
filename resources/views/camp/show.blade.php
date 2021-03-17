@@ -23,7 +23,7 @@
 <div class="card-body row justify-content-md-center">
   <div class="col-md-6">
      <div class="table-responsive">
-   <table class="table table-borderless  table-striped mt-4">
+   <table class="table table-borderless mt- bg-light">
             <tr>
               <th class="text-right">Camp Title : </th>
                 <td>{{ $camp->camp_title }}</td>

@@ -10,7 +10,7 @@
          </h2>
   	 </div>
   	 <div class="col-md-6 text-right">
-  	 	<a href="{{ route('camp.create') }}" class="btn btn-info"> <i class="fa fa-plus"></i> New Camp</a>
+  	 	<a href="{{ route('camp.create') }}" class="btn btn-danger"> <i class="fa fa-plus"></i> New Camp</a>
   	 </div>
   	 	
   </div>

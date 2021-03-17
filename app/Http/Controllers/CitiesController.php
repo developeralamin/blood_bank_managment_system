@@ -11,6 +11,12 @@ use App\Http\Requests\CityRequest;
 
 class CitiesController extends Controller
 {
+    //  public function __construct()
+    // {
+    //     parent::__construct();
+    //     $this->data['main_menu']    = 'All_city';
+    //     $this->data['sub_menu']     = 'sub_city';
+    // }
     /**
      * Display a listing of the resource.
      *

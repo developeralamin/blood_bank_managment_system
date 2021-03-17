@@ -3,13 +3,24 @@
 @section('content')
 
  <div class="row page-header mb-5">
+   @if($mode == 'Edit')
      <div class="col-md-6">
   	 	 <h2 class="m-0 font-weight-bold text-primary">
-          Add New Camp
+          Update Single Camp
          </h2>
   	 </div>
+  @else
+
+<div class="col-md-6">
+       <h2 class="m-0 font-weight-bold text-primary">
+          Add New Camp
+         </h2>
+     </div>
+
+  @endif
+
   	<div class="col-md-6 text-right">
-  	 	<a href="{{ route('camp.store') }}" class="btn btn-info"> <i class="fa fa-minus"></i> Back </a>
+  	 	<a href="{{ route('camp.store') }}" class="btn btn-danger"> <i class="fa fa-minus"></i> Back </a>
   	 </div>
   </div>
   
@@ -25,25 +36,35 @@
 <!-- DataTales Example -->
 
 <div class="card shadow page-header mb-4">
+
+  @if($mode == 'Edit')
    <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary">
-          Add New Camp
-      </h6>
-         
+         Update Single Camp
+      </h6>  
      </div>
+ @else 
+<div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">
+          Add New Camp
+      </h6>  
+     </div>
+ @endif
+
+
       <div class="card-body row justify-content-md-center">
   <div class="col-md-6">
 
-    {{-- @if($mode == 'Edit') --}}
+    @if($mode == 'Edit')
 
-    {{  Form::model($camp, ['route' =>['camp.update',$camp->id], 
-    'method' => 'put']) }}
+    {{  Form::model($camp,['route' =>['camp.update',$camp->id], 'method' => 'put']) }}
+   
 
-    {{-- @else --}}
+    @else
 
     {!! Form::open(['route' => 'camp.store','method' => 'post']) !!}
 
-   {{--  @endif --}}
+    @endif
 
 
 

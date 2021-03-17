@@ -23,7 +23,7 @@
 <div class="card-body row justify-content-md-center">
   <div class="col-md-6">
      <div class="table-responsive">
-   <table class="table table-borderless  table-striped mt-4">
+   <table class="table table-borderless  bg-light mt-4">
               <tr>
                 <th class="text-right">City Name : </th>
                 <td>{{ $city->city_name }}</td>
