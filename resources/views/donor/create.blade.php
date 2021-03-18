@@ -58,7 +58,6 @@
 
     {{  Form::model($donor, ['route' =>['donor.update',$donor->id],  'method' => 'put']) }}
    
-
     @else
 
     {!! Form::open(['route' => 'donor.store','method' => 'post']) !!}
@@ -72,7 +71,7 @@
 
   <div class="form-group">
     <label for="gender">Gender<span class="text-danger">*</span></label>
-     {{ Form::select('gender',['1'=>'Male','0'=>'Female'], NULL, [ 'class'=>'form-control', 'id' => 'gender', 'placeholder' => 'Gender' ]) }}
+     {{ Form::select('gender',['1'=>'Male','0'=>'Female'], NULL, [ 'class'=>'form-control', 'id' => 'gender' ]) }}
   </div>
 
   <div class="form-group">

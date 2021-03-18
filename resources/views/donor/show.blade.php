@@ -31,7 +31,7 @@
 
               <tr>
                 <th class="text-right">Gender : </th>
-                <td>{{ $donor->gender }}</td>
+                <td>{{ ($donor->gender  == 1) ? 'Male' : 'Female' }}</td>
               </tr>
 
               <tr>

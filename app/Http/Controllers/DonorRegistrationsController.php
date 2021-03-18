@@ -7,6 +7,7 @@ use App\Models\Donor;
 use App\Models\BloodGroup;
 use Illuminate\Support\Facades\Session;
 use App\Http\Requests\DonorRequest;
+use App\Http\Requests\UpdateDonorRequest;
 
 
 class DonorRegistrationsController extends Controller
@@ -87,7 +88,7 @@ class DonorRegistrationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(DonorRequest $request, $id)
+    public function update(UpdateDonorRequest $request, $id)
     {
           $data                            = $request->all();
 
