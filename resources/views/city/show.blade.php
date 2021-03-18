@@ -10,7 +10,7 @@
          </h2>
      </div>
   	 <div class="col-md-6 text-right">
-  	 	<a href="{{ route('city.store') }}" class="btn btn-info"> <i class="fa fa-minus"></i> Back</a>
+  	 	<a href="{{ route('city.store') }}" class="btn btn-danger"> <i class="fa fa-minus"></i> Back</a>
   	 </div>
   	 	
   </div>

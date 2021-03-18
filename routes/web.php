@@ -29,3 +29,6 @@ Route::resource('camp', CampsController::class);
 
 use App\Http\Controllers\BloodGroupsController;
 Route::resource('blood', BloodGroupsController::class,['except' => ['destroy'] ]);
+
+use App\Http\Controllers\DonorRegistrationsController;
+Route::resource('donor', DonorRegistrationsController::class);
