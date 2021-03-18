@@ -3,13 +3,21 @@
 @section('content')
 
  <div class="row page-header mb-5">
-  
-<div class="col-md-6">
+
+@if($mode == 'Edit')
+     <div class="col-md-6">
+       <h2 class="m-0 font-weight-bold text-primary">
+          Update Blood Group
+         </h2>
+     </div>
+@else
+    <div class="col-md-6">
        <h2 class="m-0 font-weight-bold text-primary">
           Add Blood Group
          </h2>
      </div>
 
+@endif
  
 
   	<div class="col-md-6 text-right">
@@ -29,29 +37,35 @@
 <!-- DataTales Example -->
 
 <div class="card shadow page-header mb-4"> 
-<div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">
+
+  @if($mode == 'Edit')
+     <div class="card-header py-3">
+       <h6 class="m-0 font-weight-bold text-primary">
+         Update Blood Group
+      </h6>  
+     </div>
+
+    @else
+    <div class="card-header py-3">
+       <h6 class="m-0 font-weight-bold text-primary">
          Add Blood Group
       </h6>  
      </div>
 
-
+    @endif 
 
       <div class="card-body row justify-content-md-center">
   <div class="col-md-6">
 
-   {{--  @if($mode == 'Edit')
+    @if($mode == 'Edit')
 
     {{  Form::model($blood,['route' =>['blood.update',$blood->id], 'method' => 'put']) }}
    
-
-    @else --}}
+    @else
 
     {!! Form::open(['route' => 'blood.store','method' => 'post']) !!}
 
-    {{-- @endif --}}
-
-
+    @endif
 
   <div class="form-group">
     <label for="blood_title">Blood Group<span class="text-danger">*</span></label>

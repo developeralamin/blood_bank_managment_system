@@ -33,7 +33,8 @@ class BloodGroupsController extends Controller
      */
     public function create()
     {
-        return view('blood.create');
+         $this->data['mode']           ='create';
+        return view('blood.create',$this->data);
     }
 
     /**
@@ -72,7 +73,10 @@ class BloodGroupsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $this->data['mode']           ='Edit';
+        $this->data['blood']          = BloodGroup::findOrFail($id);
+
+        return view('blood.create',$this->data);
     }
 
     /**
@@ -84,19 +88,18 @@ class BloodGroupsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $data                        = $request->all();
+
+         $blood                       = BloodGroup::find($id);
+
+
+         $blood->blood_name           = $data['blood_name'];
+         $blood->give_blood           = $data['give_blood'];
+         $blood->receive_blood        = $data['receive_blood'];
+
+         $blood->save();
+
+         return redirect()->to('blood');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-       if(BloodGroup::find($id)->delete() ) {
-         Session::flash('message','B');
-       }
-    }
 }

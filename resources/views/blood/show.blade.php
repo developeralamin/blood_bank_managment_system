@@ -6,7 +6,7 @@
   <div class="row page-header mb-5">
   	 <div class="col-md-6">
        <h2 class="m-0 font-weight-bold text-primary">
-         Blood Information
+        <strong class="text-danger">{{ $blood->blood_name }} </strong> Blood Information
          </h2>
      </div>
   	 <div class="col-md-6 text-right">
@@ -18,7 +18,7 @@
 <!-- DataTales Example -->
 <div class="card shadow page-header mb-4">
    <div class="card-header py-3">
-       <h6 class="m-0 font-weight-bold text-primary">Blood Information</h6>
+       <h6 class="m-0 font-weight-bold text-primary"><strong class="text-danger">{{ $blood->blood_name }} </strong> Blood Information</h6>
     </div>
 <div class="card-body row justify-content-md-center">
   <div class="col-md-6">
