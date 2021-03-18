@@ -129,22 +129,6 @@
             </li>       
     <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsesix"
-                    aria-expanded="true" aria-controls="collapsesix">
-                 <i class="fa fa-asterisk"></i>
-                    <span>All Gallery</span>
-                </a>
-                <div id="collapsesix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Add Gallery</a>
-                       
-                    </div>
-                </div>
-            </li>
-
-
-    <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseseven"
                     aria-expanded="true" aria-controls="collapseseven">
                     {{-- <i class="fas fa-fw fa-cog"></i> --}}
@@ -153,7 +137,7 @@
                 </a>
                 <div id="collapseseven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Add News</a>
+                        <a class="collapse-item" href="{{ url('news') }}">Add News</a>
                        
                     </div>
                 </div>
@@ -169,7 +153,7 @@
                 </a>
                 <div id="collapseeight" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="">Add Advertisment</a>
+                        <a class="collapse-item" href="{{ url('advertisment') }}">Add Advertisment</a>
                        
                     </div>
                 </div>

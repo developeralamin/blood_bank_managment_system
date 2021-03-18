@@ -1,6 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StatesController;
+use App\Http\Controllers\CitiesController;
+use App\Http\Controllers\CampsController;
+use App\Http\Controllers\BloodGroupsController;
+use App\Http\Controllers\DonorRegistrationsController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AdvertismentsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +22,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-use App\Http\Controllers\DashboardController;
+
 Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
 Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
-
-use App\Http\Controllers\StatesController;
 Route::resource('state', StatesController::class,['except' => ['show','edit','update'] ]);
 
-use App\Http\Controllers\CitiesController;
 Route::resource('city', CitiesController::class);
 
-use App\Http\Controllers\CampsController;
 Route::resource('camp', CampsController::class);
 
-use App\Http\Controllers\BloodGroupsController;
 Route::resource('blood', BloodGroupsController::class,['except' => ['destroy'] ]);
 
-use App\Http\Controllers\DonorRegistrationsController;
 Route::resource('donor', DonorRegistrationsController::class);
+
+Route::resource('news', NewsController::class);
+
+Route::resource('advertisment', AdvertismentsController::class);
