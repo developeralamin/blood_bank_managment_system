@@ -9,12 +9,12 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-	public $data = [];
+	
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-   
+   public $data = [];
 
-    //  public function __construct()
+    // public function __construct()
     // {
     // 	$this->data['main_menu'] = '';
     // 	$this->data['sub_menu']  = '';

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\State;
 use App\Models\City;
+use App\Models\Camp;
+use App\Models\Donor;
 use App\Models\BloodGroup;
 
 class DashboardController extends Controller
@@ -23,10 +25,12 @@ class DashboardController extends Controller
     public function index()
     {
         
-         $this->data['totalState']         = State::count('id');
-        // $this->data['totalShaka']        = Shaka::count('id');
-        // $this->data['totalCourse']       = Course::count('id');
-
+         $this->data['totalDonor']          = Donor::count('id');
+         $this->data['totalState']          = State::count('id');
+         $this->data['totalBlood']          = BloodGroup::count('id');
+         $this->data['totalCamp']           = Camp::count('id');
+         $this->data['totalCity']           = City::count('id');
+        
         return view('dashboard', $this->data);
     }
 }

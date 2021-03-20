@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('dashboard') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
                     {{-- <i class="fas fa-laugh-wink"></i> --}}
                     <i class="fa fa-medkit" aria-hidden="true" style="color:red;"></i>
@@ -43,8 +43,8 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href=" {{ route('dashboard') }}">
+            <li class="nav-item active">
+                <a class="nav-link" href=" {{ url('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -61,7 +61,7 @@
          </a>
   <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
-     <a class="collapse-item " href="{{ url('state') }}">Add State</a>
+     <a class="collapse-item" href="{{ url('state') }}">Add State</a>
                        
     </div>
      </div>
@@ -273,7 +273,7 @@
                     <div class="alert alert-success" role="alert">
                      {{ session('message') }}
                      </div>
-              @endif
+                @endif
                     @yield('content')
                
 

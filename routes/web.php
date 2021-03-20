@@ -23,8 +23,8 @@ use App\Http\Controllers\AdvertismentsController;
 */
 
 
-Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
-Route::get('/',[DashboardController::class,'index'])->name('dashboard');
+Route::get('dashboard',[DashboardController::class,'index']);
+Route::get('/',[DashboardController::class,'index']);
 
 Route::resource('state', StatesController::class,['except' => ['show','edit','update'] ]);
 

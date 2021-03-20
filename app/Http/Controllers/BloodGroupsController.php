@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BloodGroup;
+use App\Http\Requests\BloodGroupRequest;
+
 
 class BloodGroupsController extends Controller
 {
@@ -43,7 +45,7 @@ class BloodGroupsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BloodGroupRequest $request)
     {
         $formdata = $request->all();
 
